@@ -1,0 +1,80 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    font-size: 10px;
+}
+body{
+    font-size: 1.2rem; /*12px*/
+}
+
+.calculator {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+    position: absolute; /*önce pozisyonu absolute yapıyoruz ortada bağımsız bir nesne şeklinde hareket edebilsin diye*/
+    top: 50%;   /*19 ve 20.satırlar ile tam ortalanmadı*/
+    left: 50%;
+    transform: translate(-50%,-50%);   /*transform ile tam ortalamış oluyoruz*/
+}
+
+.calculator-input{
+    width: 100%;
+    font-size: 4rem;
+    height: 70px;
+    border: none;
+    background-color: black;
+    color: #ccc;
+    text-align: right;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/*butonların hepsinde olması gereken genel özellikler*/
+button{
+    height: 50px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #c4c4c4;
+    background-color: transparent;
+    font-size: 2.5rem;
+    color: #333;
+}
+button:hover{
+    background-color:#eaeaea ;
+
+}
+.operator {
+    color: #337cac;
+}
+.clear{
+    background-color: #f0595f;
+    border-color: red;
+    color: #fff;
+}
+
+.clear:hover {
+    background-color: #f17377;
+}
+.equal-sign {
+    background-color: #2E86C0;
+    border-color: #337cac;
+    color: #fff;
+    grid-area: 2/4/5/4;  /*eşittir butonu başlangıcı 2.satır 4.kolon biişi 5.satır 4.kolon olsun*/
+    height: 100%; /*buton full yer kaplasın*/
+
+}
+.equal-sign:hover{
+    background-color: #4e9ed4;
+}
+/*grid düzeni*/
+.calculator-keys{
+    display: grid;
+    grid-template-columns: repeat(4,1fr); /*Her satırda 4 eleman, 25% boyutunda*/
+    grid-gap: 20px; /*gridler arasında boşluk*/
+    /*49'dan sonra 50.satırı verdiğimizde hesap makinesi border dışına taşar.
+    Bu yüzden 25% i kendimiz vermek yerine 25% yerine 1fr veririz. Elemanla için 100% boşluğu eşit böler*/
+
+}
